@@ -1,23 +1,41 @@
 <template>
-          <div class="justify-center h-screen w-100 flex items-center">
-      <p class="text-center text-3xl">Coming soon!</p>
-      </div>
-  <div class="area">
 
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+  <div class="justify-center h-screen items-center flex flex-col">
+    <div class="">
+      <h1 class="text-5xl font-bold mb-4">Coming Soon!</h1>
+      </div>
+
+    <div class="flex flex-col items-center justify-center pt-10 space-y-4">
+  <h1 class="text-4xl font-bold pb-5">How many donuts?</h1>
+  <input  id="donut_count" name="donut_count" v-model.number="donuts"
+    type="number"
+    placeholder="Enter a number"
+    class="border w-36 border-gray-300 rounded px-4 py-2 text-center
+     shadow focus:outline-none focus:ring-2 focus:ring-pink-500 "
+  />
+</div>
+
+
+  </div>
+
+  <div class="area">
+    <ul class="circles" :key="donuts">
+      <li v-for="n in donuts" :key="n" :class="`donut${Math.floor(Math.random() * 5) + 1}`"></li>
     </ul>
   </div>
 </template>
+<script>
+
+export default {
+  name: 'TheWelcome',
+  data() {
+    return {
+      donuts: 6, // Default number of donuts
+    };
+  },
+};
+</script>
+
 <style scoped>
 /*Start Animations*/
 @-webkit-keyframes animatetop {
@@ -81,6 +99,27 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index:  -1;
+}
+
+.donut1 {
+  background-image: url('@/assets/donut1.png');
+}
+
+.donut2 {
+  background-image: url('@/assets/donut2.png');
+}
+
+.donut3 {
+  background-image: url('@/assets/donut3.png');
+}
+
+.donut4 {
+  background-image: url('@/assets/donut4.png');
+}
+
+.donut5 {
+  background-image: url('@/assets/donut5.png');
 }
 
 .circles li {
@@ -89,10 +128,11 @@
   list-style: none;
   width: 20px;
   height: 20px;
+  /* background-image: var(--donut-image); */
   /* border-color: #4e54c8;
   border-width: 1px; */
   /* background: rgba(255, 255, 255, 0.2); */
-  background-image: url('@/assets/donut.png');
+  /* background-image: url('@/assets/donut.png'); */
   background-position: 25% 25%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -153,16 +193,16 @@
 
 .circles li:nth-child(8) {
   left: 50%;
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   animation-delay: 15s;
   animation-duration: 45s;
 }
 
 .circles li:nth-child(9) {
   left: 20%;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   animation-delay: 2s;
   animation-duration: 35s;
 }
