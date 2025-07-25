@@ -1,10 +1,12 @@
 <script setup>
 
-import TheWelcome from './components/TheWelcome.vue'
+import TheWelcome from './components/TheDonuts.vue'
+import FlyThrough from './components/FlyThrough.vue'
 </script>
 
 <template>
     <TheWelcome />
+    <!-- <FlyThrough/> -->
 </template>
 
 <style scoped>
