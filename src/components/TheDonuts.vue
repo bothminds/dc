@@ -229,7 +229,7 @@ export default {
   }
 
   100% {
-    transform: translateY(-1000px) rotate(720deg);
+    transform: translateY(-110vh) rotate(720deg);
     opacity: 1;
     border-radius: 50%;
   }
