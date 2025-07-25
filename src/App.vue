@@ -1,10 +1,13 @@
 <script setup>
 
-import TheWelcome from './components/TheDonuts.vue'
+import FooterSimple from './components/FooterSimple.vue';
+import TheDonuts from './components/TheDonuts.vue'
+
 </script>
 
 <template>
-    <TheWelcome />
+    <TheDonuts />
+    <FooterSimple />
 </template>
 
 <style scoped>
@@ -19,6 +22,7 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+
   }
 
 
