@@ -108,7 +108,7 @@ export default {
         animationDelay: this.getAnimationDelay(),
         animationDuration: `${Math.floor(Math.random() * 20) - this.animationSpeed + 12}s`, // Random duration between 10 and 30 seconds
         backgroundSize: `${dsize}px ${dsize}px`,
-        backgroundImage: `url('src/assets/donut${Math.floor(Math.random() * 5) + 1}.png')`
+        backgroundImage: `url('images/donut${Math.floor(Math.random() * 5) + 1}.png')`
       };
     }
   }

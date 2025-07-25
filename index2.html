@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+    .logo {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: url(@asset('donut1.png')) no-repeat center;
+      background-size: contain;
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+  </style>
+</head>
+<body>
+
+<script>
+function createLogo() {
+  const logo = document.createElement('div');
+  logo.className = 'logo';
+
+  // Random position on screen
+  const startX = Math.random() * window.innerWidth;
+  const startY = Math.random() * window.innerHeight;
+  logo.style.left = startX + 'px';
+  logo.style.top = startY + 'px';
+
+  document.body.appendChild(logo);
+
+  // Animate forward
+  let scale = 0.5;
+  let opacity = 0.5;
+  const anim = setInterval(() => {
+    scale += 0.05;
+    opacity += 0.02;
+    logo.style.transform = `scale(${scale})`;
+    logo.style.opacity = opacity;
+    if (scale > 2 || opacity >= 1) {
+      clearInterval(anim);
+      logo.remove();
+    }
+  }, 50);
+}
+
+// Spawn regularly
+setInterval(createLogo, 300);
+</script>
+
+</body>
+</html>
