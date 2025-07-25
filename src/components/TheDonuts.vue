@@ -102,7 +102,7 @@ export default {
     getDonutStyle() {
       const dsize = this.getSize(); // Update size before returning style
       return {
-        left: `${Math.floor(Math.random() * 100) - 20}%`,
+        left: `${Math.floor(Math.random() * 120) - 10}%`,
         width: `${dsize}px`,
         height: `${dsize}px`,
         animationDelay: this.getAnimationDelay(),
