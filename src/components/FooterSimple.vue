@@ -1,5 +1,5 @@
 <template>
-  <footer class="dark:text-zinc-200 py-6 bg-zinc-300 dark:bg-zinc-800 px-5">
+  <footer class="dark:text-zinc-200 py-6 text-zinc-800 bg-zinc-200 dark:bg-zinc-800 px-5">
     <div class="container lg:px-10 flex flex-col md:flex-row items-center justify-between">
       <div class="flex space-x-4 mt-2 md:mt-0 text-sm"
         >&copy; {{ currentYear }} </div>

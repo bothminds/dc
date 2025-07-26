@@ -7,7 +7,7 @@ import TheDonuts from './components/TheDonuts.vue'
 
 <template>
     <TheDonuts />
-    <FooterSimple />
+    <FooterSimple :company-name="'Both Minds'" />
 </template>
 
 <style scoped>

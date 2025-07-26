@@ -7,24 +7,27 @@
     </div>
 
     <div class="flex flex-col items-center justify-center pt-10 space-y-4">
-<v-dialog max-width="500">
+<v-dialog max-width="400">
   <template v-slot:activator="{ props: activatorProps }">
     <v-btn
       v-bind="activatorProps"
-      color="surface-variant"
+      color="pink-lighten-2"
       text="Donut Settings"
       variant="flat"
     ></v-btn>
   </template>
 
   <template v-slot:default="{ isActive }">
-    <v-card class="items-center justify-center pt-5 bg-black dark:text-white">
- 
+    <v-card class="items-center justify-center pt-5" color="pink-lighten-2">
+      <v-card-title class="text-h5">Donut Settings</v-card-title>
+      <v-divider></v-divider>
+      <div class="text-caption mb-2">Adjust the settings for your floating donuts:</div>
+      <v-divider></v-divider>
       <div>
         <div class="text-caption">Donut Count:</div>
         <v-slider v-model="donuts" :max="36" :min="1" :step="1" thumb-label class="w-56">
           <template v-slot:append>
-            {{ donuts }}
+            <div class="w-10">{{ donuts }}</div>
           </template>
         </v-slider>
       </div>
@@ -32,7 +35,7 @@
         <div class="text-caption">Min Donut Size:</div>
         <v-slider v-model="donutMinSize" :max="50" :min="10" :step="1" thumb-label class="w-56">
           <template v-slot:append>
-            {{ donutMinSize }}
+            <div class="w-10">{{ donutMinSize }}</div>
           </template>
         </v-slider>
       </div>
@@ -40,7 +43,7 @@
         <div class="text-caption">Max Donut Size:</div>
         <v-slider v-model="donutMaxSize" :max="200" :min="50" :step="1" thumb-label class="w-56">
           <template v-slot:append>
-            {{ donutMaxSize }}
+            <div class="w-10">{{ donutMaxSize }}</div>
           </template>
         </v-slider>
       </div>
@@ -48,7 +51,7 @@
         <div class="text-caption">Average Speed:</div>
         <v-slider v-model="animationSpeed" :max="10" :min="0" :step="1" thumb-label class="w-56">
           <template v-slot:append>
-            {{ animationSpeed }}
+            <div class="w-10">{{ animationSpeed }}</div>
           </template>
         </v-slider>
       </div>

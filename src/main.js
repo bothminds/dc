@@ -11,7 +11,12 @@ import App from './App.vue'
 
 const vuetify = createVuetify({
   components,
-  directives,
+    directives,
+    treeShake: true,
+    theme: false, // Disable default theme
+    theme: {
+    defaultTheme: 'system', // 'light' | 'dark' | 'system'
+  },
 })
 
 createApp(App).use(vuetify).mount('#app')
