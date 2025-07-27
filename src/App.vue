@@ -1,11 +1,13 @@
 <script setup>
 
 import FooterSimple from './components/FooterSimple.vue';
-import TheDonuts from './components/TheDonuts.vue'
+import TheDonuts from './components/TheDonuts.vue';
+import Header from './components/Header.vue';
 
 </script>
 
 <template>
+  <Header></Header>
     <TheDonuts />
     <FooterSimple :company-name="'Both Minds'" />
 </template>

@@ -2,7 +2,7 @@
 
   <div class="justify-center items-center flex-1 flex flex-col">
     <div class="flex flex-col items-center justify-center pt-10 space-y-4">
-      <h1 class="lg:text-5xl md:text-3xl text-2xl font-bold mb-4 text-center">Donut City's web site is coming soon!</h1>
+      <h1 class="lg:text-5xl md:text-3xl text-2xl font-bold mb-4 text-center">Coming soon!</h1>
       <h3 class="text-1xl mb-6">In the meantime, enjoy our floating donuts!</h3>
     </div>
 
