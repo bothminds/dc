@@ -1,15 +1,24 @@
 <script setup>
-
+import { RouterView } from 'vue-router'
 import FooterSimple from './components/FooterSimple.vue';
-import TheDonuts from './components/TheDonuts.vue';
-import Header from './components/Header.vue';
+import NavBar from './components/NavBar.vue';
+import FooterSocial from './components/FooterSocial.vue';
 
 </script>
 
 <template>
-  <Header></Header>
-    <TheDonuts />
-    <FooterSimple :company-name="'Both Minds'" />
+  
+  <div class="min-h-screen h-screen w-screen flex flex-col">
+    <NavBar />
+    <div class="flex-1 pb-24 container mx-auto px-4 sm:px-6 lg:px-8">
+      <RouterView/>
+  </div>
+  <div class="border-t border-donut-300 dark:border-donut-700 mt-10">
+
+     <FooterSocial :company-name="'Both Minds'"/>
+         <FooterSimple :company-name="'Donut City'"/>  
+  </div>
+  </div>
 </template>
 
 <style scoped>

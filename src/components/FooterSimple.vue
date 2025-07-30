@@ -1,19 +1,17 @@
 <template>
-  <footer class="dark:text-zinc-200 py-6 text-zinc-800 bg-zinc-200 dark:bg-zinc-800 px-5">
-    <div class=" lg:px-10 flex flex-col md:flex-row items-center justify-between">
-      <div class="flex space-x-4 my-2 text-sm"
+  <footer class=" bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)] py-4 px-5 pt-30">
+    <div class="container mx-auto sm:px-10 flex flex-col sm:flex-row items-center justify-between">
+      <div class="flex space-x-4 my-2 text-sm text-center"
         >&copy; {{ currentYear }} </div>
-      <div class="w-auto flextext-center">
+      <div class="w-auto flex text-center">
              <a
           href="https://bothminds.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center space-x-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
+          class="flex space-x-2 hover:bg-donut-200 dark:hover:bg-donut-700 transition"
         >
-          <span class="text-lg font-semibold pr-2">Web Development by </span>
-
-        <img src="@/assets/images/both_minds_logo.png" alt="Both Minds Logo" class="h-8"/>
-        <span class="text-lg font-semibold pl-2 pr-10">Both Minds</span>
+          <span class="text-md sm:text-lg font-semibold pr-2 text-center">Web site by Both Minds</span>
+                <img src="@/assets/images/both_minds_logo.png" alt="Both Minds Logo" class="h-8"/>
         </a>
       
       </div>
