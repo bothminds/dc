@@ -7,10 +7,13 @@ module.exports = {
       colors: {
         donut: {
           bg: 'var(--donut-bg)',
+          "dark:bg": 'var(--donut-bg-dark)',
           primary: 'var(--donut-primary)',
           accent: 'var(--donut-accent)',
           text: 'var(--donut-text)',
+          "dark:text": 'var(--donut-text-dark)',
           highlight: 'var(--donut-highlight)',
+           border: 'var(--color-border)',
         },
       
         textShadow: {
@@ -18,11 +21,11 @@ module.exports = {
         },
       },
     },
-    variants: {
-      extend: {},
-    },
-    plugins: [
-      require('tailwindcss-textshadow')
-    ],
-  }
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require('tailwindcss-textshadow')
+  ],
 }

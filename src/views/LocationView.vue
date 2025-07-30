@@ -4,7 +4,7 @@ import paralaxImage from '@/assets/images/strawberry_glaze_tray.jpg';
 
 </script>
 <template>
-    <div :style="{ backgroundImage: `url(${paralaxImage})` }" class="bg-cover bg-position-[center_top_5rem] sm:bg-position-[center_top_10rem] bg-parallax bg-no-repeat h-2/3 sm:h-full bg-opacity-30 bg-fixed">
+    <div>
       <!-- <div class="text-center">
         <h1 class="display-1 font-weight-bold text-2xl">Location</h1>
         <h2 class="subheading">Find us at our Tucker location!</h2>
@@ -16,9 +16,22 @@ import paralaxImage from '@/assets/images/strawberry_glaze_tray.jpg';
         </div>
     </div>
     </div>
+            <div class="bg-full">
+<div :style="{ backgroundImage: `url(${paralaxImage})` }" class="bg-cover bg-position-[center_top_5rem] sm:bg-position-[center_top_10rem] bg-parallax bg-no-repeat h-2/3 sm:h-full bg-opacity-30 bg-fixed"></div >
+        </div>
 </template>
 <style scoped>
+.bg-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--donut-bg-soft);
+  color: var(--donut-text);
+}
+
 
 </style>
-<script></script>
 

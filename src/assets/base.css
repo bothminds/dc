@@ -1,32 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-donut-100: #f6ead0;
-  --color-donut-200: #f5c6a5;
-  --color-donut-300: #f4b27a;
-  --color-donut-400: #f39e4f;
-  --color-donut-500: #f28b24;
-  --color-donut-600: #f17800;
-  --color-donut-700: #f06e00;
-  /* --color-donut-800: #c56529; */
-    --color-donut-800: rgb(105, 151, 204);
-  --color-donut-900: #ee5b00;
+
+
+  --color-donut-100: oklch(95% 0.01 95);  /* Powdered Glaze */
+  --color-donut-200: oklch(91% 0.012 95); /* Light Cream */
+  --color-donut-300: oklch(87% 0.014 90); /* Sweet Dough */
+  --color-donut-400: oklch(83% 0.016 95); /* Golden Crust */
+  --color-donut-500: oklch(79% 0.018 95); /* Warm Bake */
+  --color-donut-600: oklch(72% 0.02 95);  /* Toasted Sugar */
+  --color-donut-700: oklch(65% 0.022 95); /* Caramelized Edges */
+  --color-donut-800: oklch(58% 0.023 95); /* Deep Glaze */
+  --color-donut-900: oklch(51% 0.025 95); /* Crisp Crust */
+
+
+
+
+
+  --font-montserrat: 'MontserratBold', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --donut-bg: #f6ead0; /* Antique White - vanilla glaze */
+  --donut-bg: var(--color-donut-300); 
+  --donut-bg-soft: var(--color-donut-100); /* Soft background color */
   --donut-primary: #E58943; /* Tiger's Eye - caramel drizzle */
   --donut-accent: #F1D1A2; /* Deep Champagne - buttery dough */
   --donut-text: #3E2C23; /* Chocolate Glaze */
   --donut-highlight: #ED77B1; /* Raspberry Glaze */
 
   /* Dark mode palette */
-  --donut-bg-dark: #2D2320; /* Dark Chocolate Glaze */
+  --donut-bg-dark: var(--color-donut-900); /* Dark Chocolate Glaze */
   --donut-primary-dark: #F28B24; /* Bright Caramel */
   --donut-accent-dark: #A67C52; /* Toasted Dough */
-  --donut-text-dark: #FCE4D8; /* Vanilla Glaze */
+  --donut-text-dark: var(--color-donut-300); /* Vanilla Glaze */
   --donut-highlight-dark: #ED77B1; /* Raspberry Glaze */
 
   --vt-c-white: #ffffff;
@@ -55,10 +65,10 @@
 :root {
   --color-background: var(--donut-bg);
   --color-background-dark: var(--donut-bg-dark);
-  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-soft: var(--donut-bg-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
-  --color-border: var(--vt-c-divider-light-2);
+  --color-border: var(--color-donut-200);
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-text-light-1);
@@ -73,7 +83,7 @@
     --color-background-soft: var(--donut-bg-soft);
     --color-background-mute: var(--donut-bg-mute);
 
-    --color-border: var(--vt-c-divider-dark-2);
+    --color-border: var(--color-donut-100);
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
@@ -115,12 +125,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@theme {
-  --font-montserrat: 'MontserratBold', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
 }
 
 @font-face {

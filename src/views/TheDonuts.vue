@@ -1,11 +1,10 @@
 <template>
 
-  <div class="justify-center items-center flex-1 flex flex-col h-full min-h-100">
+  <div class="container justify-center items-center flex-1 flex flex-col h-full min-h-100">
     <div class="flex flex-col items-center justify-center pt-10 space-y-4">
-      <div class="flex flex-col w-100 items-center justify-center pt-1 pl-1 pb-4 pr-3 space-y-4 bg-orange-300/90 dark:bg-amber-800/100 rounded-lg shadow-lg">
 
     <div
-      class="flex flex-col w-100 items-center justify-center pt-10 space-y-4 bg-donut-200/100 dark:bg-donut-800/100 rounded-lg shadow-lg">
+      class="flex flex-col w-100 items-center justify-center pt-10 space-y-4 rounded-lg shadow-lg bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
       <h1 class="lg:text-5xl md:text-3xl text-2xl font-bold mb-4 text-center">Welcome to Donut City</h1>
       <p class="text-1xl mb-6 mx-10">Donut City—where mornings begin with joy, and every bite is a little
         celebration. Crafted fresh in Tucker, Georgia, our handmade donuts and breakfast sandwiches are more than a treat—they're a tradition.
@@ -13,7 +12,6 @@
         here. Come hungry, leave happy.</p>
     </div>
 
-      </div>
       </div>
 
 
@@ -74,7 +72,7 @@
 
   </div>
 
-  <div class="circles dark:bg-[color:var(--donut-bg-dark)] rounded-lg shadow-lg">
+  <div class="circles bg-[color:var(--donut-bg)]/90 dark:bg-[color:var(--donut-bg-dark)]/90 rounded-lg shadow-lg">
     <ul class="circle" :key="donuts">
       <li v-for="n in donuts" :key="n" :style="getDonutStyle()"></li>
     </ul>
@@ -185,7 +183,7 @@ export default {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  /* background-color: var(--color-background-soft); */
+  background-color: var(--color-background-soft);
 }
 
 /* .donut1 {

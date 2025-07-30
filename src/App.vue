@@ -10,7 +10,7 @@ import FooterSocial from './components/FooterSocial.vue';
   
   <div class="min-h-screen h-screen w-screen flex flex-col">
     <NavBar />
-    <div class="flex-1 pb-24 container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex-1 pb-24 container mx-auto px-4 sm:px-6 lg:px-8 ">
       <RouterView/>
   </div>
   <div class="border-t border-donut-300 dark:border-donut-700 mt-10">
@@ -25,8 +25,6 @@ import FooterSocial from './components/FooterSocial.vue';
 header {
   line-height: 1.5;
 }
-
-
 
 @media (min-width: 1024px) {
   header {

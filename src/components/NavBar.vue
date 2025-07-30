@@ -38,7 +38,7 @@ const currentRoute = router.currentRoute.value.name;
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4 pl-10">
                             <router-link v-for="item in router.options.routes" :key="item.name" :to="item.path" :class="[
-                                $router.currentRoute.value.name === item.name ? 'bg-zinc-900 text-donut-800 border-b-2 border-zinc-800 dark:border-b-2 dark:border-zinc-300' : 'text-donut-800',
+                                $router.currentRoute.value.name === item.name ? 'bg-zinc-900 text-donut-800 border-b-2 border-zinc-800 dark:border-b-2 ' : 'text-donut-800',
                                 ' px-3 py-2 text-2xl font-montserrat font-medium dark:text-donut-300 group hover:text-donut-500 text-left  ',
                             ]" :aria-current="$router.currentRoute.value.name === item.name ? 'page' : undefined">
                                 {{ item.name }}
@@ -47,7 +47,7 @@ const currentRoute = router.currentRoute.value.name;
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <label for="Theme Change" class="block px-1 dark:text-gray-300">
+            <label for="Theme Change" class="block px-1 dark:text-donut-300">
               <DisclosureButton
                 @click="toggleTheme"
                 id="themebutton"
@@ -73,7 +73,7 @@ const currentRoute = router.currentRoute.value.name;
             <div class="space-y-1 px-2 pt-2 pb-3">
                 <DisclosureButton>
                     <router-link v-for="item in router.options.routes" :key="item.name" :to="item.path" :class="[
-                         $router.currentRoute.value.name === item.name  ? 'bg-zinc-900 text-donut-300 ' : 'text-donut-800',
+                         $router.currentRoute.value.name === item.name  ? ' text-donut-600 ' : 'text-donut-800',
                         ' px-3 py-2 text-md font-montserrat font-medium dark:text-donut-300 group block rounded-md text-left hover:bg-zinc-700 hover:text-donut-300',
                     ]" :aria-current="item.current ? 'page' : undefined" @click="isOpen(close)">
                         {{ item.name }}

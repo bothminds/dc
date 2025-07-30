@@ -6,7 +6,7 @@
 
 
         <v-card class="w-full max-w-4xl mx-auto mt-10">
-            <v-tabs v-model="tab" bg-color="" color="" class="text-lg bg-donut-400 dark:bg-donut-700 text-white dark:text-gray-200">
+            <v-tabs v-model="tab" bg-color="" color="black" class="text-lg bg-donut-400 dark:bg-donut-700 text-donut-900 dark:text-donut-200">
                 <v-tab value="donuts">Donuts</v-tab>
                 <v-tab value="sandwiches">Sandwiches</v-tab>
                 <v-tab value="drinks">Drinks</v-tab>
@@ -17,14 +17,14 @@
                     <v-tabs-window-item value="donuts" >
                         <ul class="space-y-4">
                             <li v-for="donut in donuts" :key="donut.type"
-                                class="flex justify-between mt-1 mb-4 border-b pb-2">
+                                class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400 pb-2">
 
                                 <div class="flex flex-col w-full">
                                     <div class="flex justify-between w-full">
                                         <span>{{ donut.name }}</span>
                                         <span>${{ donut.price.toFixed(2) }}</span>
                                     </div>
-                                    <span class="text-sm text-zinc-500">{{ donut.description }}</span>
+                                    <span class="text-sm">{{ donut.description }}</span>
 
                                     <!-- <div class="flex justify-left">
                                         <img :src="getImageUrl(donut.image)" :alt="donut.type" class="h-30 w-30 rounded-full" />
@@ -37,7 +37,7 @@
                     <v-tabs-window-item value="sandwiches">
                         <ul class="space-y-4">
                             <li v-for="sandwich in sandwiches" :key="sandwich.type"
-                                class="flex justify-between mt-1 mb-4 border-b pb-2">
+                                class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400  pb-2">
                                 <div class="flex flex-col w-full">
                                     <div class="flex justify-between w-full">
                                         <span>{{ sandwich.name }}</span>
@@ -52,7 +52,7 @@
                     <v-tabs-window-item value="drinks">
                         <ul class="space-y-4">
                             <li v-for="drink in drinks" :key="drink.type"
-                                class="flex justify-between mt-1 mb-4 border-b pb-2">
+                                class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400  pb-2">
                                 <span>{{ drink.type }}</span>
                                 <span>${{ drink.price.toFixed(2) }}</span>
                             </li>
@@ -61,6 +61,9 @@
                 </v-tabs-window>
             </v-card-text>
         </v-card>
+        <div class="bg-full">
+
+        </div>
     </div>
 </template>
 <script>
@@ -298,3 +301,16 @@ export default {
     },
 }       
 </script>
+<style scoped>
+.bg-full {
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--donut-bg-soft);
+
+  color: var(--donut-text);
+}
+</style>
