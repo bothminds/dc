@@ -17,7 +17,7 @@ import paralaxImage from '@/assets/images/strawberry_glaze_tray.jpg';
     </div>
     </div>
             <div class="bg-full">
-<div :style="{ backgroundImage: `url(${paralaxImage})` }" class="bg-cover bg-position-[center_top_5rem] sm:bg-position-[center_top_10rem] bg-parallax bg-no-repeat h-2/3 sm:h-full bg-opacity-30 bg-fixed"></div >
+<div :style="{ backgroundImage: `url(${paralaxImage})` }" class="bg-cover bg-position-[center_top_5rem] sm:bg-position-[center_top_10rem] bg-parallax bg-no-repeat h-full sm:h-full bg-opacity-100 bg-fixed"></div >
         </div>
 </template>
 <style scoped>

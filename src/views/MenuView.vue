@@ -6,42 +6,48 @@
 
 
         <v-card class="w-full max-w-4xl mx-auto mt-10">
-            <v-tabs v-model="tab" bg-color="" color="black" class="text-lg bg-donut-400 dark:bg-donut-700 text-donut-900 dark:text-donut-200">
+            <v-tabs v-model="tab" bg-color="" color="black"
+                class="text-lg bg-donut-400 dark:bg-donut-700 text-donut-900 dark:text-donut-200">
                 <v-tab value="donuts">Donuts</v-tab>
                 <v-tab value="sandwiches">Sandwiches</v-tab>
                 <v-tab value="drinks">Drinks</v-tab>
             </v-tabs>
 
-            <v-card-text bg-color="white" class="bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
+            <v-card-text bg-color="white"
+                class="bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
                 <v-tabs-window v-model="tab" bg-color="primary" color="white">
-                    <v-tabs-window-item value="donuts" >
-                        <ul class="space-y-4">
+                    <v-tabs-window-item value="donuts">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
                             <li v-for="donut in donuts" :key="donut.type"
-                                class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400 pb-2">
+                                class="shadow-md m-4 hover:scale-105 transition-transform">
 
-                                <div class="flex flex-col w-full">
+                                <div class="flex flex-col py-2 px-2 w-full">
                                     <div class="flex justify-between w-full">
                                         <span>{{ donut.name }}</span>
                                         <span>${{ donut.price.toFixed(2) }}</span>
                                     </div>
+                                    <div class="flex justify-center">
+                                        <img :src="getImageUrl(donut.image)" :alt="donut.type"
+                                            class="h-30 w-30 rounded-2xl" />
+                                    </div>
                                     <span class="text-sm">{{ donut.description }}</span>
-
-                                    <!-- <div class="flex justify-left">
-                                        <img :src="getImageUrl(donut.image)" :alt="donut.type" class="h-30 w-30 rounded-full" />
-                                    </div> -->
                                 </div>
                             </li>
                         </ul>
                     </v-tabs-window-item>
 
                     <v-tabs-window-item value="sandwiches">
-                        <ul class="space-y-4">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             <li v-for="sandwich in sandwiches" :key="sandwich.type"
-                                class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400  pb-2">
-                                <div class="flex flex-col w-full">
+                                class="shadow-md m-4 hover:scale-105 transition-transform">
+                                <div class="flex flex-col py-2 px-2 w-full">
                                     <div class="flex justify-between w-full">
                                         <span>{{ sandwich.name }}</span>
                                         <span>${{ sandwich.price.toFixed(2) }}</span>
+                                    </div>
+                                                                <div class="flex justify-center">
+                                        <img :src="getImageUrl(sandwich.image)" :alt="sandwich.type"
+                                            class="h-30 w-30 rounded-2xl" />
                                     </div>
                                     <span class="text-sm text-zinc-500">{{ sandwich.description }}</span>
                                 </div>
@@ -76,13 +82,13 @@ export default {
             donuts: [
                 {
                     "name": "Glazed Donut",
-                    "price": 1.29,
-                    "image": "glazed.jpg",
+                    "price": 1.49,
+                    "image": "glazed_donuts_s.jpg",
                     "description": "Soft and airy, covered in a sweet, glossy glaze that melts in your mouth."
                 },
                 {
                     "name": "Chocolate Frosted",
-                    "price": 1.39,
+                    "price": 1.49,
                     "image": "chocolate-frosted.jpg",
                     "description": "Classic donut topped with smooth chocolate icing—perfect for any chocoholic."
                 },
@@ -94,43 +100,43 @@ export default {
                 },
                 {
                     "name": "Strawberry Frosted",
-                    "price": 1.39,
+                    "price": 1.49,
                     "image": "strawberry-frosted.jpg",
                     "description": "Light and fruity with a pink strawberry glaze and colorful sprinkles."
                 },
                 {
-                    "name": "Jelly Donut",
-                    "price": 1.39,
-                    "image": "jelly.jpg",
+                    "name": "Bear Claw",
+                    "price": 1.49,
+                    "image": "bear_claw_s.jpg",
                     "description": "Golden fried and filled with sweet, tangy berry jelly—classic and satisfying."
                 },
                 {
                     "name": "French Cruller",
-                    "price": 1.59,
+                    "price": 1.49,
                     "image": "french-cruller.jpg",
                     "description": "Light and airy with a honey-like glaze and a signature twisted shape."
                 },
                 {
                     "name": "Apple Fritter",
-                    "price": 1.79,
+                    "price": 1.49,
                     "image": "fritter.jpg",
                     "description": "Chunky, chewy, and packed with cinnamon-spiced apple pieces in every bite."
                 },
                 {
                     "name": "Blueberry Cake",
-                    "price": 1.39,
+                    "price": 1.49,
                     "image": "blueberry.jpg",
                     "description": "Dense and moist with real blueberries and a hint of vanilla glaze."
                 },
                 {
                     "name": "Old Fashioned",
-                    "price": 1.29,
+                    "price": 1.49,
                     "image": "old-fashioned.jpg",
                     "description": "Crumbly and crisp on the edges with a rich, buttery flavor."
                 },
                 {
                     "name": "Maple Frosted",
-                    "price": 1.39,
+                    "price": 1.49,
                     "image": "maple-frosted.jpg",
                     "description": "Smooth maple glaze adds warmth and sweetness to this classic treat."
                 },
@@ -142,19 +148,19 @@ export default {
                 },
                 {
                     "name": "Maple Bacon",
-                    "price": 1.85,
+                    "price": 2.49,
                     "image": "maple-bacon.jpg",
                     "description": "Savory meets sweet: maple glaze topped with crispy bacon crumbles."
                 },
                 {
-                    "name": "Cinnamon Sugar",
-                    "price": 1.29,
+                    "name": "Cinnamon Roll",
+                    "price": 1.49,
                     "image": "cinnamon-sugar.jpg",
                     "description": "Coated in a blend of cinnamon and sugar for a warm, nostalgic flavor."
                 },
                 {
                     "name": "Donut Holes",
-                    "price": 0.25,
+                    "price": 0.35,
                     "image": "donut-holes.jpg",
                     "description": "Bite-sized glazed delights—light, poppable, and totally addictive."
                 },
@@ -163,58 +169,15 @@ export default {
                     "price": 1.39,
                     "image": "vanilla-frosted.jpg",
                     "description": "Delicately sweet with a smooth vanilla glaze and colorful sprinkle topping."
+                },
+                {
+                    "name": "Éclair",
+                    "price": 1.75,
+                    "image": "eclair.png",
+                    "description": "Delicately sweet cream-filled pastry topped with chocolate icing"
                 }
             ]
             ,
-            //     { "type": "Glazed Donut", "price": 1.29 },
-            //     { "type": "Chocolate Frosted", "price": 1.39 },
-            //     { "type": "Boston Kreme", "price": 1.49 },
-            //     { "type": "Strawberry Frosted", "price": 1.39 },
-            //     { "type": "Jelly Donut", "price": 1.39 },
-            //     { "type": "French Cruller", "price": 1.59 },
-            //     { "type": "Apple Crumb", "price": 1.49 },
-            //     { "type": "Blueberry Cake", "price": 1.39 },
-            //     { "type": "Old Fashioned", "price": 1.29 },
-            //     { "type": "Powdered Donut", "price": 1.29 },
-            //     { "type": "Cinnamon Sugar", "price": 1.29 },
-            //     { "type": "Maple Frosted", "price": 1.39 },
-            //     { "type": "Double Chocolate", "price": 1.49 },
-            //     { "type": "Vanilla Frosted", "price": 1.39 },
-            //     { "type": "Apple Fritter", "price": 1.79 },
-            //     { "type": "Chocolate Glazed", "price": 1.49 },
-            //     { "type": "Sour Cream Donut", "price": 1.39 },
-            //     { "type": "Cream Filled", "price": 1.49 },
-            //     { "type": "Lemon Filled", "price": 1.39 },
-            //     { "type": "Coconut Donut", "price": 1.29 },
-            //     { "type": "Tiger Tail", "price": 1.59 },
-            //     { "type": "Maple Bar", "price": 1.49 },
-            //     { "type": "Long John", "price": 1.49 },
-            //     { "type": "Cronut", "price": 2.29 },
-            //     { "type": "Bear Claw", "price": 1.79 },
-            //     { "type": "Malasada", "price": 1.59 },
-            //     { "type": "Spudnut", "price": 1.39 },
-            //     { "type": "Devil's Food", "price": 1.49 },
-            //     { "type": "Donut Holes (Munchkins)", "price": 0.25 },
-            //     { "type": "Pershing Donut", "price": 1.59 },
-            //     { "type": "Berliner", "price": 1.49 },
-            //     { "type": "Apple Cider Donut", "price": 1.39 },
-            //     { "type": "Chocolate Sprinkle", "price": 1.39 },
-            //     { "type": "Crumb Donut", "price": 1.49 },
-            //     { "type": "Churro Donut", "price": 1.59 },
-            //     { "type": "Cinnamon Twist", "price": 1.39 },
-            //     { "type": "Buttermilk Donut", "price": 1.29 },
-            //     { "type": "Toasted Coconut", "price": 1.59 },
-            //     { "type": "Glazed Lemon", "price": 1.39 },
-            //     { "type": "Chocolate Creme", "price": 1.49 },
-            //     { "type": "Vanilla Creme", "price": 1.39 },
-            //     { "type": "Chocolate Butternut", "price": 1.49 },
-            //     { "type": "Peanut Donut", "price": 1.29 },
-            //     { "type": "Sugared Donut", "price": 1.25 },
-            //     { "type": "Coffee Roll", "price": 1.29 },
-            //     { "type": "Chocolate Dipped Cruller", "price": 1.59 },
-            //     { "type": "Glazed Strawberry", "price": 1.99 },
-            //     { "type": "Chocolate Headlight", "price": 1.39 }
-            // ],
             sandwiches: [
                 {
                     "name": "Bacon, Egg & Cheese",
@@ -296,7 +259,12 @@ export default {
     },
     methods: {
         getImageUrl(filename) {
-            return new URL(`../assets/images/${filename}`, import.meta.url).href;
+            let image = new URL(`../assets/images/${filename}`, import.meta.url).href
+            if (image === "undefined") {
+                console.error(`Image not found: ${filename}`);
+                return new URL(`../assets/images/glazed_donuts_s.jpg`, import.meta.url).href; // Fallback image
+            }
+            return image
         }
     },
 }       
@@ -304,13 +272,13 @@ export default {
 <style scoped>
 .bg-full {
     position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: var(--donut-bg-soft);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--donut-bg-soft);
 
-  color: var(--donut-text);
+    color: var(--donut-text);
 }
 </style>
