@@ -23,7 +23,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                     class="bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
                     <v-tabs-window v-model="tab" bg-color="primary" color="white" class="transition-height">
                         <v-tabs-window-item value="donuts">
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-43 lg:grid-cols-5 gap-4">
                                 <li v-for="donut in donuts" :key="donut.type"
                                     class="shadow-md m-4 hover:scale-105 transition-transform">
 
@@ -54,7 +54,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                         <v-tabs-window-item value="sandwiches">
                             <div v-for="type in sandwichTypes" :key="type">
                                 <div class="text-center text-lg font-bold my-4">{{ type }} Sandwiches</div>
-                                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-43 lg:grid-cols-5 gap-4">
                                     <li v-for="sandwich in sandwiches.filter(s => s.type === type)" :key="sandwich.name"
                                         class="shadow-md m-4 hover:scale-105 transition-transform">
                                         <div class="flex flex-col py-2 px-2 w-full">
@@ -133,6 +133,8 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
 export default {
 
     name: 'MenuView',
+
+    
     data() {
         return {
             tab: 'donuts',
@@ -359,6 +361,7 @@ export default {
     methods: {
         getImageUrl(filename) {
             console.log(`Fetching image: ${filename}`);
+
             let imageUrl = new URL(`../assets/images/${filename}`, import.meta.url).href
             console.log(`Image URL: ${imageUrl}`);
             if (imageUrl.endsWith("undefined")) {
