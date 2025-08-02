@@ -7,17 +7,17 @@ import FooterSocial from './components/FooterSocial.vue';
 </script>
 
 <template>
-  
+
   <div class="min-h-screen h-screen w-screen flex flex-col">
     <NavBar />
     <div class="flex-1 pb-24 container mx-auto px-4 sm:px-6 lg:px-8 ">
-      <RouterView/>
-  </div>
-  <div class="border-t border-donut-300 dark:border-donut-700 mt-10">
+      <RouterView />
+    </div>
+    <div class="border-t border-donut-300 dark:border-donut-700 mt-10">
 
-     <FooterSocial :company-name="'Both Minds'"/>
-         <FooterSimple :company-name="'Donut City'"/>  
-  </div>
+      <FooterSocial :company-name="'Both Minds'" />
+      <FooterSimple :company-name="'Donut City'" />
+    </div>
   </div>
 </template>
 
