@@ -98,13 +98,13 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
         <div v-if="tab === 'donuts'" class="absolute flex-col -z-1 top-25 w-full flex items-center justify-center overflow-hidden">
             <div class="-z-1 w-full justify-center mb-12 bg-fixed bg-center bg-cover"
                 :style="{ backgroundImage: `url('${getImageUrl(bgImages.donuts[0])}')`,
-                    height: tabHeight * .8 + 'px'
+                    height: tabHeight * .6 + 'px'
                  }">
 
             </div>
             <div class=" -z-1 w-full mt-12 items-center mb-12 bg-fixed bg-center bg-cover"
                 :style="{ backgroundImage: `url('${getImageUrl(bgImages.donuts[1])}')`,
-                    height: tabHeight * .8 + 'px'
+                    height: tabHeight * .6 + 'px'
                  }">
 
             </div>
