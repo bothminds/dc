@@ -23,23 +23,23 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                     class="bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
                     <v-tabs-window v-model="tab" bg-color="primary" color="white" class="transition-height">
                         <v-tabs-window-item value="donuts">
-                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-43 lg:grid-cols-5 gap-4">
+                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                 <li v-for="donut in donuts" :key="donut.type"
                                     class="shadow-md m-4 hover:scale-105 transition-transform">
 
                                     <div class="flex flex-col py-2 px-2">
-                                        <div class="flex w-full text-md font-bold pb-2 justify-center text-orange-500">
-                                            <span>{{ donut.name }}</span>
+                                        <div class="flex w-full text-md font-bold pb-2 justify-center">
+                                            <span class="">{{ donut.name }}</span>
                                         </div>
                                         <!-- <div class="flex w-full justify-end text-sm">
                                             <span>${{ donut.price.toFixed(2) }}</span>
                                         </div> -->
                                         <div class="relative flex justify-center py-2">
                                             <img :src="getImageUrl(donut.image)" :alt="donut.type"
-                                                class="h-30 w-30 rounded-2xl relative"
+                                                class="w-full rounded-2xl relative"
                                             />
                                             <span
-                                                class="absolute top-2 right-2 bg-orange-400 text-white rounded-full px-3 py-1 text-sm font-bold shadow"
+                                                class="absolute top-4 right-2 bg-orange-400 text-white rounded-full px-3 py-1 text-sm font-bold shadow"
                                                 style="transform: translate(0, 0);"
                                             >
                                                 ${{ donut.price.toFixed(2) }}
@@ -54,18 +54,18 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                         <v-tabs-window-item value="sandwiches">
                             <div v-for="type in sandwichTypes" :key="type">
                                 <div class="text-center text-lg font-bold my-4">{{ type }} Sandwiches</div>
-                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-43 lg:grid-cols-5 gap-4">
+                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     <li v-for="sandwich in sandwiches.filter(s => s.type === type)" :key="sandwich.name"
                                         class="shadow-md m-4 hover:scale-105 transition-transform">
                                         <div class="flex flex-col py-2 px-2 w-full">
-                                        <div class="flex w-full text-md font-bold pb-2 justify-center text-orange-500">
-                                                <span>{{ sandwich.name }}</span>
+                                        <div class="flex w-full text-md font-bold pb-2 justify-center">
+                                                <span class="h-10 text-center">{{ sandwich.name }}</span>
                                             </div>
                                             <div class="relative flex justify-center">
-                                                <img :src="getImageUrl('sandwiches/' + sandwich.type.toLowerCase() + '_s.jpg')" :alt="sandwich.type"
-                                                    class="h-30 w-30 rounded-2xl relative" />
+                                                <img :src="'/images/sandwiches/' + sandwich.type.toLowerCase() + '_s.jpg'" :alt="sandwich.type"
+                                                    class="w-full rounded-2xl relative" />
                                                                                                 <span
-                                                class="absolute top-2 right-2 bg-orange-400 text-white rounded-full px-3 py-1 text-sm font-bold shadow"
+                                                class="absolute top-4 right-2 bg-orange-400 text-white rounded-full px-3 py-1 text-sm font-bold shadow"
                                                 style="transform: translate(0, 0);"
                                             >
                                                 ${{ sandwich.price.toFixed(2) }}
@@ -73,7 +73,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
 
                                                     
                                             </div>
-                                            <span class="text-sm text-zinc-500 py-2">{{ sandwich.description
+                                            <span class="text-sm">{{ sandwich.description
                                             }}</span>
                                         </div>
                                     </li>
@@ -98,13 +98,13 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
         <div v-if="tab === 'donuts'" class="absolute flex-col -z-1 top-25 w-full flex items-center justify-center overflow-hidden">
             <div class="-z-1 w-full justify-center mb-12 bg-fixed bg-center bg-cover"
                 :style="{ backgroundImage: `url('${getImageUrl(bgImages.donuts[0])}')`,
-                    height: drinksTabHeight * .8 + 'px'
+                    height: tabHeight * .8 + 'px'
                  }">
 
             </div>
             <div class=" -z-1 w-full mt-12 items-center mb-12 bg-fixed bg-center bg-cover"
                 :style="{ backgroundImage: `url('${getImageUrl(bgImages.donuts[1])}')`,
-                    height: drinksTabHeight * .8 + 'px'
+                    height: tabHeight * .8 + 'px'
                  }">
 
             </div>
@@ -112,7 +112,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
         <div v-if="tab === 'sandwiches'" class="absolute flex-col -z-1 top-25 w-full flex items-center justify-center overflow-hidden">
             <div class="-z-1 w-full justify-center mb-12 bg-fixed bg-center bg-cover"
                 :style="{ backgroundImage: `url('${getImageUrl(bgImages.sandwiches[0])}')`,
-                    height: drinksTabHeight * 1 + 'px'
+                    height: tabHeight * 1 + 'px'
                  }">
             </div>
         </div>
@@ -122,7 +122,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                 class="-z-1 w-full justify-center mb-12 bg-fixed bg-center"
                 :style="{
                     backgroundImage: `url('${getImageUrl(bgImages.drinks[0])}')`,
-                    height: drinksTabHeight * 0.7 + 'px'
+                    height: tabHeight * 0.7 + 'px'
                 }"
             >
             </div>
@@ -372,7 +372,7 @@ export default {
     }
     ,
     computed: {
-        drinksTabHeight() {
+        tabHeight() {
             // Example: calculate based on window size or other logic
             return window.innerHeight; // Adjust as needed
         }

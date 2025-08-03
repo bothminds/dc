@@ -20,7 +20,7 @@
         <div class=" bg-white/100 dark:bg-zinc-800/100 rounded-lg shadow-lg dark: pt-5">
           <h2 class="font-bold my-2 text-2xl">Store Hours</h2>
           <div class="text-sm text-zinc-500 dark:text-zinc-400 my-4 mx-6 text-left">
-            <div v-for="(hours, day) in storeHours" :key="day" class="flex justify-between mt-1 mb-3">
+            <div v-for="(hours, day) in storeHours" :key="day" class="flex justify-between mt-1 mb-2">
               <div class="flex justify-between w-full">
                 <span>{{ day }}:</span><span>{{ toAmPm(hours.open) }} - {{ toAmPm(hours.close) }}</span>
               </div>
@@ -33,12 +33,15 @@
                   are {{ storeStatus().isOpen }}</span>
               </div>
               <div class="text-sm text-zinc-500 dark:text-zinc-400 my-4 mx-auto text-left flex flex-col">
-                <h3 class="font-bold text-lg text-center items-center">Store Features</h3>
+                <h3 class="font-bold text-lg text-center items-center">Features</h3>
                 <div class="mt-1 mb-3">
                   <TruckIcon class="h-5 w-5 inline-block " /> Drive Thru
                 </div>
                 <div class="mt-1 mb-3">
                   <BuildingStorefrontIcon class="h-5 w-5 inline-block" /> Dine-In
+                </div>
+                <div class="mt-1 mb-3">
+                  <ShoppingBagIcon class="h-5 w-5 inline-block" /> In-store pickup
                 </div>
               </div>
             </div>
@@ -49,6 +52,7 @@
           <div class="pt-5">
             <h2 class="font-bold my-2 text-2xl">Address</h2>
             <p class="text-sm text-zinc-500 dark:text-zinc-400 my-2 mx-6">
+              (770) 558-6005<br />
               1880 Mountain Industrial Blvd<br />
               Tucker, GA 30084
             </p>
@@ -69,10 +73,10 @@
   </div>
 </template>
 <script>
-import { BuildingStorefrontIcon, TruckIcon } from "@heroicons/vue/24/outline";
+import { BuildingStorefrontIcon, ShoppingBagIcon, TruckIcon } from "@heroicons/vue/24/outline";
 
 export default {
-  components: { BuildingStorefrontIcon, TruckIcon },
+  components: { BuildingStorefrontIcon, ShoppingBagIcon, TruckIcon },
   props: {
     full: {
       type: Boolean,

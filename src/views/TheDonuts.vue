@@ -1,18 +1,22 @@
+<script setup>
+import VuitifyCarousel from '@/components/VuitifyCarousel.vue';
+</script>
 <template>
 
   <div class="container justify-center items-center flex-1 flex flex-col h-full min-h-100">
     <div class="flex flex-col items-center justify-center pt-10 space-y-4">
 
-    <div
-      class="flex flex-col w-100 items-center justify-center pt-10 space-y-4 rounded-lg shadow-lg bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
-      <h1 class="lg:text-5xl md:text-3xl text-2xl font-bold mb-4 text-center">Welcome to Donut City</h1>
-      <p class="text-1xl mb-6 mx-10">Donut City—where mornings begin with joy, and every bite is a little
-        celebration. Crafted fresh in Tucker, Georgia, our handmade donuts and breakfast sandwiches are more than a treat—they're a tradition.
-        Whether you're grabbing your usual or discovering a new favorite, there's always something waiting for you
-        here. Come hungry, leave happy.</p>
-    </div>
-
+      <div
+        class="flex flex-col w-100 items-center justify-center pt-10 space-y-4 rounded-lg shadow-lg bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
+        <h1 class="lg:text-5xl md:text-3xl text-2xl font-bold mb-4 text-center">Welcome to Donut City</h1>
+        <p class="text-1xl mb-6 mx-10">Donut City—where mornings begin with joy, and every bite is a little
+          celebration. Crafted fresh in Tucker, Georgia, our handmade donuts and breakfast sandwiches are more than a
+          treat—they're a tradition.
+          Whether you're grabbing your usual or discovering a new favorite, there's always something waiting for you
+          here. Come hungry, leave happy.</p>
       </div>
+<VuitifyCarousel/>
+    </div>
 
 
     <div class="flex flex-col items-center justify-center pt-10 space-y-4">
@@ -90,6 +94,7 @@ export default {
       animationDelay: 0,
       animationSpeed: 3, // Default animation speed
       size: '50px', // Default size of donuts
+      
     };
   },
 
