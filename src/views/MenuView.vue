@@ -50,7 +50,7 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
 
                         <v-tabs-window-item value="sandwiches">
                             <div v-for="type in sandwichTypes" :key="type">
-                                <div class="text-center text-lg font-bold my-4">{{ type }} Sandwiches</div>
+                                <div class="text-center text-lg font-bold my-4">{{ type }}</div>
                                 <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     <li v-for="sandwich in sandwiches.filter(s => s.type === type)" :key="sandwich.name"
                                         class="shadow-md m-4 hover:scale-105 transition-transform">
@@ -80,13 +80,16 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                         </v-tabs-window-item>
 
                         <v-tabs-window-item value="drinks">
-                                <ul class="space-y-4l">
-                                    <li v-for="drink in drinks" :key="drink.type"
-                                        class="flex justify-between mt-1 mb-2  border-b-2 border-donut-400  pb-2">
-                                        <span>{{ drink.type }}</span>
+                            <div v-for="type in drinkTypes" :key="type">
+                                <div class="text-center text-lg font-bold my-4">{{ type }}</div>
+                                <ul class="space-y-4">
+                                    <li v-for="drink in drinks.filter(d => d.type === type)" :key="drink.name"
+                                        class="flex justify-between mt-1 mb-2 border-b-2 border-donut-400 pb-2">
+                                        <span>{{ drink.name }}</span>
                                         <span>${{ drink.price.toFixed(2) }}</span>
                                     </li>
                                 </ul>
+                            </div>
                         </v-tabs-window-item>
                     </v-tabs-window>
                 </v-card-text>
@@ -135,7 +138,8 @@ export default {
     data() {
         return {
             tab: 'donuts',
-            sandwichTypes: ['Bagel', 'Croissant', 'Toast'],
+            sandwichTypes: ['Bagel', 'Croissant', 'Toast', 'Burrito'],
+            drinkTypes: ['Coffee', 'Tea', 'Iced Blend Coffee', 'Smoothies'],
             donuts: [
                 {
                     "name": "Glazed Donut",
@@ -331,20 +335,52 @@ export default {
                     "price": 4.85,
                     "description": "Ham and bacon double-up with eggs and cheese on classic toast.",
                     "image": ""
+                },
+                {
+                    "name": "Breakfast Burrito",
+                    "type": "Burrito",
+                    "price": 4.85,
+                    "description": "A hearty breakfast burrito filled with eggs, potatoes, sausage.",
+                    "image": ""
+                },
+                {
+                    "name": "Extra Bacon or Sausage",
+                    "type": "Burrito",
+                    "price": 1.00,
+                    "description": "Add extra bacon or sausage to your breakfast burrito.",
+                    "image": ""
+                },
+                {
+                    "name": "Ham",
+                    "type": "Burrito",
+                    "price": 1.00,
+                    "description": "add extra ham or turkey to your breakfast burrito.",
+                    "image": ""
+                },
+                {
+                    "name": "Jalapeños",
+                    "type": "Burrito",
+                    "price": 0.15,
+                    "description": "Add jalapeños to your breakfast burrito.",
+                    "image": ""
                 }
             ]
             ,
             drinks: [
-                { "type": "Coffee (Small)", "price": 1.99 },
-                { "type": "Coffee (Medium)", "price": 2.49 },
-                { "type": "Coffee (Large)", "price": 2.99 },
-                { "type": "Iced Coffee", "price": 2.99 },
-                { "type": "Hot Chocolate", "price": 2.49 },
-                { "type": "Tea (Small)", "price": 1.99 },
-                { "type": "Tea (Medium)", "price": 2.49 },
-                { "type": "Tea (Large)", "price": 2.99 },
-                { "type": "Lemonade", "price": 2.49 },
-                { "type": "Orange Juice", "price": 2.99 }
+                { "type": "Coffee", "name": "Small", "price": 1.85 },
+                { "type": "Coffee", "name": "Medium", "price": 2.15 },
+                { "type": "Coffee", "name": "Large", "price": 2.45 },
+                { "type": "Tea", "name": "Small", "price": 1.60 },
+                { "type": "Tea", "name": "Medium", "price": 1.85 },
+                { "type": "Tea", "name": "Large", "price": 2.19 },
+                { "type": "Iced Blend Coffee", "name": "Mocha", "price": 4.45 },
+                { "type": "Iced Blend Coffee", "name": "Caramel", "price": 4.45 },
+                { "type": "Iced Blend Coffee", "name": "Expresso", "price": 4.45 },
+                { "type": "Iced Blend Coffee", "name": "Java Chip", "price": 4.45 },
+                { "type": "Smoothies", "name": "Strawberry", "price": 4.45 },
+                { "type": "Smoothies", "name": "Mango", "price": 4.45 },
+                { "type": "Smoothies", "name": "Honeydew", "price": 4.45 },
+                { "type": "Smoothies", "name": "Green Tea", "price": 4.45 },
             ],
             bgImages: {
                 donuts: ['sprinkled_donuts_tray.jpg', 'strawberry_glaze_tray.jpg'],
