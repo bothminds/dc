@@ -351,7 +351,7 @@ export default {
                     "image": ""
                 },
                 {
-                    "name": "Ham",
+                    "name": "Ham or turkey",
                     "type": "Burrito",
                     "price": 1.00,
                     "description": "add extra ham or turkey to your breakfast burrito.",
