@@ -24,18 +24,15 @@ import paralaxImage from '@/assets/images/sprinkled_donuts_tray.jpg';
                     <v-tabs-window v-model="tab" bg-color="primary" color="white" class="transition-height">
                         <v-tabs-window-item value="donuts">
                                 <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                                <li v-for="donut in donuts" :key="donut.type"
+                                <li v-for="donut in donuts.slice().sort((a, b) => a.name.localeCompare(b.name))" :key="donut.name"
                                     class="shadow-md m-4 hover:scale-105 transition-transform">
 
                                     <div class="flex flex-col py-2 px-2">
                                         <div class="flex w-full text-md font-bold pb-2 justify-center">
                                             <span class="">{{ donut.name }}</span>
                                         </div>
-                                        <!-- <div class="flex w-full justify-end text-sm">
-                                            <span>${{ donut.price.toFixed(2) }}</span>
-                                        </div> -->
                                         <div class="relative flex justify-center py-2">
-                                            <img :src="getImageUrl(donut.image)" :alt="donut.type"
+                                            <img :src="getImageUrl(donut.image)" :alt="donut.name"
                                                 class="w-full rounded-2xl relative"
                                             />
                                             <span
@@ -182,36 +179,36 @@ export default {
                     "image": "bear_claw_s.jpg",
                     "description": "Golden fried and filled with sweet, tangy berry jelly—classic and satisfying."
                 },
-                {
-                    "name": "French Cruller",
-                    "price": 1.49,
-                    "image": "french-cruller.jpg",
-                    "description": "Light and airy with a honey-like glaze and a signature twisted shape."
-                },
+                // {
+                //     "name": "French Cruller",
+                //     "price": 1.49,
+                //     "image": "french-cruller.jpg",
+                //     "description": "Light and airy with a honey-like glaze and a signature twisted shape."
+                // },
                 {
                     "name": "Apple Fritter",
                     "price": 1.49,
                     "image": "apple_fritter_s.jpg",
                     "description": "Chunky, chewy, and packed with cinnamon-spiced apple pieces in every bite."
                 },
-                {
-                    "name": "Blueberry Cake",
-                    "price": 1.49,
-                    "image": "blueberry_cake_s.jpg",
-                    "description": "Dense and moist with real blueberries and a hint of vanilla glaze."
-                },
-                {
-                    "name": "Old Fashioned",
-                    "price": 1.49,
-                    "image": "old_fashioned.jpg",
-                    "description": "Crumbly and crisp on the edges with a rich, buttery flavor."
-                },
-                {
-                    "name": "Maple Frosted",
-                    "price": 1.49,
-                    "image": "maple-frosted.jpg",
-                    "description": "Smooth maple glaze adds warmth and sweetness to this classic treat."
-                },
+                // {
+                //     "name": "Blueberry Cake",
+                //     "price": 1.49,
+                //     "image": "blueberry_cake_s.jpg",
+                //     "description": "Dense and moist with real blueberries and a hint of vanilla glaze."
+                // },
+                // {
+                //     "name": "Old Fashioned",
+                //     "price": 1.49,
+                //     "image": "old_fashioned.jpg",
+                //     "description": "Crumbly and crisp on the edges with a rich, buttery flavor."
+                // },
+                // {
+                //     "name": "Maple Frosted",
+                //     "price": 1.49,
+                //     "image": "maple-frosted.jpg",
+                //     "description": "Smooth maple glaze adds warmth and sweetness to this classic treat."
+                // },
                 {
                     "name": "Double Chocolate",
                     "price": 1.49,
@@ -221,7 +218,7 @@ export default {
                 {
                     "name": "Maple Bacon",
                     "price": 2.49,
-                    "image": "maple-bacon.jpg",
+                    "image": "maple_bacon_s.jpg",
                     "description": "Savory meets sweet: maple glaze topped with crispy bacon crumbles."
                 },
                 {
@@ -233,19 +230,19 @@ export default {
                 {
                     "name": "Donut Holes",
                     "price": 0.35,
-                    "image": "donut-holes.jpg",
+                    "image": "donut_holes_s.jpg",
                     "description": "Bite-sized glazed delights—light, poppable, and totally addictive."
                 },
-                {
-                    "name": "Vanilla Frosted",
-                    "price": 1.39,
-                    "image": "vanilla_frosted_s.jpg",
-                    "description": "Delicately sweet with a smooth vanilla glaze and colorful sprinkle topping."
-                },
+                // {
+                //     "name": "Vanilla Frosted",
+                //     "price": 1.39,
+                //     "image": "vanilla_frosted_s.jpg",
+                //     "description": "Delicately sweet with a smooth vanilla glaze and colorful sprinkle topping."
+                // },
                 {
                     "name": "Éclair",
                     "price": 1.75,
-                    "image": "eclair.png",
+                    "image": "eclair_both_s.jpg",
                     "description": "Delicately sweet cream-filled pastry topped with chocolate icing"
                 }
             ]
