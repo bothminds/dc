@@ -4,7 +4,7 @@ import VuitifyCarousel from '@/components/VuitifyCarousel.vue';
 <template>
 
   <div class="container justify-center items-center flex-1 flex flex-col h-full min-h-100">
-    <div class="flex flex-col items-center justify-center pt-10 space-y-4">
+    <div class="flex flex-col items-center justify-center pt-10 space-y-4 w-full max-w-4xl ">
 
       <div
         class="flex flex-col w-100 items-center justify-center pt-10 space-y-4 rounded-lg shadow-lg bg-[color:var(--donut-bg)] dark:bg-[color:var(--donut-bg-dark)] text-[color:var(--donut-text)] dark:text-[color:var(--donut-text-dark)]">
