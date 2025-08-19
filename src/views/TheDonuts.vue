@@ -15,7 +15,7 @@ import VuitifyCarousel from '@/components/VuitifyCarousel.vue';
           Whether you're grabbing your usual or discovering a new favorite, there's always something waiting for you
           here. Come hungry, leave happy.</p>
       </div>
-<VuitifyCarousel/>
+    <VuitifyCarousel/>
     </div>
 
 

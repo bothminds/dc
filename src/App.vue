@@ -8,7 +8,7 @@ import FooterSocial from './components/FooterSocial.vue';
 
 <template>
 
-  <div class="min-h-screen h-screen w-screen flex flex-col">
+  <div class="min-h-screen h-screen w-screen flex flex-col dark:bg-zinc-800/100">
     <NavBar />
     <div class="flex-1 pb-24 container mx-auto px-4 sm:px-6 lg:px-8 ">
       <RouterView />
