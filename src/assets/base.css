@@ -33,7 +33,7 @@
   --donut-highlight: #ED77B1; /* Raspberry Glaze */
 
   /* Dark mode palette */
-  --donut-bg-dark: var(--color-donut-900); /* Dark Chocolate Glaze */
+  --donut-bg-dark: #3E2C23; /* Dark Chocolate Glaze */
   --donut-primary-dark: #F28B24; /* Bright Caramel */
   --donut-accent-dark: #A67C52; /* Toasted Dough */
   --donut-text-dark: var(--color-donut-300); /* Vanilla Glaze */
